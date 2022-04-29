@@ -2,6 +2,8 @@ from ast import Break
 from random import choice
 import random
 import time
+import os
+
 
 class Sorteios:
     def __init__(self):
@@ -13,47 +15,106 @@ class Sorteios:
         return sorteio.upper()
 
     def sorteio_vava(self):
-        agentes = ['Brimstone', 'Phoenix', 'Sage', 'Sova', 'Viper', 'Chypher', 'Reyna','Killjoy', 'Breach', 'Omen', 'Jett', 'Raze', 'Skye', 'Yoru', 'Astra', 'Kay/o', 'Chamber', 'Fade', 'Omen']
+        agentes = ['Brimstone', 'Phoenix', 'Sage', 'Neon', 'Sova', 'Viper', 'Chypher', 'Reyna','Killjoy', 'Breach', 'Omen', 'Jett', 'Raze', 'Skye', 'Yoru', 'Astra', 'Kay/o', 'Chamber', 'Fade', 'Omen']
         sorteio = random.choice(agentes)
         return sorteio.upper()
 
     def menu(self):
-        menu_principal = int(input('BEM VINDO AO MENU PRINCIPAL!\n\nEscolha o tipo de sorteio.\n\n1.Sorteio de personagens\n2.Sorteio de posições/lanes\n\nESCOLHA UMA OPÇÃO: '))
+        menu_principal = int(input('BEM VINDO AO MENU PRINCIPAL!\n\nEscolha o tipo de sorteio.\n\n1.Sorteio de personagens\n2.Sorteio de posições/lanes\n4.SAIR DO PROGRAMA\n\n10. Suporte\n\n\nESCOLHA UMA OPÇÃO: '))
         if menu_principal == 1:
+            os.system('cls' if os.name == 'nt' else 'clear')
             print(self.menu_personagens())
         elif menu_principal == 2:
+            os.system('cls' if os.name == 'nt' else 'clear')
             print(self.menu_posicoes())
+        elif menu_principal == 10:
+            os.system('cls' if os.name == 'nt' else 'clear')
+            print('Para reportar bugs e/ou dar ideias de jogos para o programa usar os seguintes meios de contato.\n\nTwitter: @MaRcOsViNiCiUx\nDiscord: KAmPeR-SA#1532\n\n')
+            return self.menu_voltar()
+        elif menu_principal == 4:
+            print('Obrigado por usar o sorteador de personagens!\n\n\n\n\n\n\n\nDesenvolvido por Marcos Vinicius\ntwitter: @MaRcOsViNiCiUx')
+            print('programa fechando em')
+            time.sleep(1)
+            print(5)
+            time.sleep(1)
+            print(4)
+            time.sleep(1)
+            print(3)
+            time.sleep(1)
+            print(2)
+            time.sleep(1)
+            print(1)
+            time.sleep(1)
+            Break
         else:
+            os.system('cls' if os.name == 'nt' else 'clear')
             print("\nERRO:\nEscolha uma opção válida.\nVoltando ao menu de escolha...\n")
             return self.menu()
+
+    def menu_voltar(self):
+        menu_voltar1 = int(input('\n\nEscolha uma opção.\n\n1. Menu principal\n\nESCOLHA UMA OPÇÃO: '))
+        if menu_voltar1 == 1:
+            os.system('cls' if os.name == 'nt' else 'clear')
+            print('Obrigado por usar o sorteador de personagens!\n\n\n\n\n\n\n\nDesenvolvido por Marcos Vinicius\ntwitter: @MaRcOsViNiCiUx')
+            print('programa fechando em')
+            return self.menu()
+
+        else:
+            os.system('cls' if os.name == 'nt' else 'clear')
+            print("\nERRO:\nEscolha uma opção válida.\nVoltando ao menu de escolha...\n")
+            return self.menu_voltar()
         
     def menu_personagens(self):
         escolha_personagens = int(input('BEM VINDO AO MENU DE SORTEIOS\n\nEscolha um sorteio.\n\nSorteio de personagens:\n1. VALORANT\n2. LEAGUE OF LEGENDS\n\nESCOLHA UMA OPÇÃO: '))
         if escolha_personagens == 1:
+            os.system('cls' if os.name == 'nt' else 'clear')
             print(f'Seu agente sorteado foi {self.sorteio_vava()}')
             time.sleep(1)
             return self.escolha_depois_sorteio()
         elif escolha_personagens == 2:
+            os.system('cls' if os.name == 'nt' else 'clear')
             print(f'Seu campeão sorteado foi {self.sorteio_lol()}')
             time.sleep(1)
             return self.escolha_depois_sorteio()
         else:
+            os.system('cls' if os.name == 'nt' else 'clear')
             print("\nERRO:\nEscolha uma opção válida.\nVoltando ao menu de escolha...\n")
             return self.menu_personagens()
             
     def menu_posicoes(self):
-        print('Em desenvolvimento')
+        print('Esse local ainda está em desenvolvimento.')
+        time.sleep(3)
+        print('Voltando ao Menu...')
+        time.sleep(2)
+        os.system('cls' if os.name == 'nt' else 'clear')
+        return self.menu()
 
     def escolha_depois_sorteio(self):
         depois_sorteio = int(input('\n\nEscolha uma opção.\n\n1. Menu principal\n2. Menu de personagens\n3. SAIR DO PROGRAMA\n\nESCOLHA UMA OPÇÃO: '))
         if depois_sorteio == 1:
+            os.system('cls' if os.name == 'nt' else 'clear')
             return self.menu()
         elif depois_sorteio == 2:
+            os.system('cls' if os.name == 'nt' else 'clear')
             return self.menu_personagens()
         elif depois_sorteio == 3:
+            print('Obrigado por usar o sorteador de personagens!\n\n\n\n\n\n\n\nDesenvolvido por Marcos Vinicius\ntwitter: @MaRcOsViNiCiUx')
+            print('programa fechando em')
+            time.sleep(1)
+            print(5)
+            time.sleep(1)
+            print(4)
+            time.sleep(1)
+            print(3)
+            time.sleep(1)
+            print(2)
+            time.sleep(1)
+            print(1)
+            time.sleep(1)
             Break
         else:
+            os.system('cls' if os.name == 'nt' else 'clear')
             print("\nERRO:\nEscolha uma opção válida.\nVoltando ao menu de escolha...\n")
             return self.escolha_depois_sorteio()
-
+        
 sorteio = Sorteios()
