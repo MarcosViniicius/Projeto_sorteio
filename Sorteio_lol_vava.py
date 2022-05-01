@@ -32,20 +32,9 @@ class Sorteios:
             print('Para reportar bugs e/ou dar ideias de jogos para o programa usar os seguintes meios de contato.\n\nTwitter: @MaRcOsViNiCiUx\nDiscord: KAmPeR-SA#1532\n\n')
             return self.menu_voltar()
         elif menu_principal == 4:
-            print('Obrigado por usar o sorteador de personagens!\n\n\n\n\n\n\n\nDesenvolvido por Marcos Vinicius\ntwitter: @MaRcOsViNiCiUx')
-            print('programa fechando em')
-            time.sleep(1)
-            print(5)
-            time.sleep(1)
-            print(4)
-            time.sleep(1)
-            print(3)
-            time.sleep(1)
-            print(2)
-            time.sleep(1)
-            print(1)
-            time.sleep(1)
-            Break
+            os.system('cls' if os.name == 'nt' else 'clear')
+            return self.mensagem_suporte_pos_sorteio()
+            
         else:
             os.system('cls' if os.name == 'nt' else 'clear')
             print("\nERRO:\nEscolha uma opção válida.\nVoltando ao menu de escolha...\n")
@@ -70,12 +59,12 @@ class Sorteios:
             os.system('cls' if os.name == 'nt' else 'clear')
             print(f'Seu agente sorteado foi {self.sorteio_vava()}')
             time.sleep(1)
-            return self.escolha_depois_sorteio()
+            return self.escolha_depois_sorteio_vava()
         elif escolha_personagens == 2:
             os.system('cls' if os.name == 'nt' else 'clear')
             print(f'Seu campeão sorteado foi {self.sorteio_lol()}')
             time.sleep(1)
-            return self.escolha_depois_sorteio()
+            return self.escolha_depois_sorteio_lol()
         else:
             os.system('cls' if os.name == 'nt' else 'clear')
             print("\nERRO:\nEscolha uma opção válida.\nVoltando ao menu de escolha...\n")
@@ -89,8 +78,8 @@ class Sorteios:
         os.system('cls' if os.name == 'nt' else 'clear')
         return self.menu()
 
-    def escolha_depois_sorteio(self):
-        depois_sorteio = int(input('\n\nEscolha uma opção.\n\n1. Menu principal\n2. Menu de personagens\n3. SAIR DO PROGRAMA\n\nESCOLHA UMA OPÇÃO: '))
+    def escolha_depois_sorteio_vava(self):
+        depois_sorteio = int(input('\n\nEscolha uma opção.\n\n1. Menu principal\n2. Menu de personagens\n3. Sortear novamente\n4. SAIR DO PROGRAMA\n\nESCOLHA UMA OPÇÃO: '))
         if depois_sorteio == 1:
             os.system('cls' if os.name == 'nt' else 'clear')
             return self.menu()
@@ -98,13 +87,38 @@ class Sorteios:
             os.system('cls' if os.name == 'nt' else 'clear')
             return self.menu_personagens()
         elif depois_sorteio == 3:
+            os.system('cls' if os.name == 'nt' else 'clear')
+            print(self.sorteio_vava())
+            time.sleep(2)
+            print(self.escolha_depois_sorteio_vava())
+        elif depois_sorteio == 4:
+            os.system('cls' if os.name == 'nt' else 'clear')
+            return self.mensagem_suporte_pos_sorteio()
+            
+    def escolha_depois_sorteio_lol(self):
+        depois_sorteio = int(input('\n\nEscolha uma opção.\n\n1. Menu principal\n2. Menu de personagens\n3. Sortear novamente\n4. SAIR DO PROGRAMA\n\nESCOLHA UMA OPÇÃO: '))
+        if depois_sorteio == 1:
+            os.system('cls' if os.name == 'nt' else 'clear')
+            return self.menu()
+        elif depois_sorteio == 2:
+            os.system('cls' if os.name == 'nt' else 'clear')
+            return self.menu_personagens()
+        elif depois_sorteio == 3:
+            os.system('cls' if os.name == 'nt' else 'clear')
+            print(self.sorteio_lol())
+            time.sleep(2)
+            print(self.escolha_depois_sorteio_lol())
+        elif depois_sorteio == 4:
+            os.system('cls' if os.name == 'nt' else 'clear')
+            return self.mensagem_suporte_pos_sorteio()
+        else:
+            os.system('cls' if os.name == 'nt' else 'clear')
+            print("\nERRO:\nEscolha uma opção válida.\nVoltando ao menu de escolha...\n")
+            return self.escolha_depois_sorteio()
+
+    def mensagem_suporte_pos_sorteio(self):
             print('Obrigado por usar o sorteador de personagens!\n\n\n\n\n\n\n\nDesenvolvido por Marcos Vinicius\ntwitter: @MaRcOsViNiCiUx')
             print('programa fechando em')
-            time.sleep(1)
-            print(5)
-            time.sleep(1)
-            print(4)
-            time.sleep(1)
             print(3)
             time.sleep(1)
             print(2)
@@ -112,9 +126,5 @@ class Sorteios:
             print(1)
             time.sleep(1)
             Break
-        else:
-            os.system('cls' if os.name == 'nt' else 'clear')
-            print("\nERRO:\nEscolha uma opção válida.\nVoltando ao menu de escolha...\n")
-            return self.escolha_depois_sorteio()
         
 sorteio = Sorteios()
