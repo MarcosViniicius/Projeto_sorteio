@@ -9,17 +9,17 @@ class Sorteios:
     def __init__(self):
         self.menu()
 
-    def sorteio_lol(self):
+    def sorteio_lol(self): # Sorteia os persgonagens do LOL.
         campeoes = ['Ahri', 'Akali', 'akshan', 'amumu','alistar', 'anivia', 'annie', 'aphelios', 'ashe', 'aurelion sol', 'aatrox', 'azir', 'bardo', 'blitzcrank', 'brand', 'braum', 'caitlyn', 'camille', 'cassiopeia', 'cho gath', 'corki', 'darius', 'diana', 'dr mundo', 'draven', 'ekko', 'elise', 'evelynn', 'ezreal', 'fiddle', 'galio', 'fiora', 'fizz', 'gangplank', 'garen', 'gnar', 'gragas', 'graves', 'gwen', 'hecarim', 'heimerdinger', 'illaoi', 'irelia', 'JANNA', 'jarvan', 'jax', 'jayce', 'jhin', 'jinx', 'kaisa', 'kalista', 'karma', 'karthus', 'kassadin', 'katarina', 'kayle', 'kayn', 'kennen', 'kha zix', 'kindred', 'kled', 'kog maw', 'le blanc', 'lee sin', 'leona', 'lilian', 'lissandra', 'lucian', 'lulu', 'lux', 'malphite', 'malzahar','maokai', 'master yi', 'miss fortune', 'mordekaiser', 'morgana', 'nami', 'nasus', 'nautilus', 'neeko', 'nidalee', 'nocturne', 'nunu e willump', 'olaf', 'orianna', 'ornn', 'pantheon', 'poppy', 'pyke', 'qiyana', 'quinn', 'rakan', 'ranmus', 'rek sai', 'rell', 'renata glasc', 'renekton', 'rengar', 'riven', 'rumble', 'ryze', 'samira', 'sejuani', 'senna', 'seraphine','sett', 'shaco', 'shen', 'shyvana','singed','sion', 'sivir ','skarner', 'sona', 'soraka', 'swain', 'sylas', 'syndra', 'tahm kench', 'taliyah', 'talon', 'taric', 'teemo', 'thresh', 'tristana', 'trundle', 'tryndamere', 'twisted fate', 'twitch', 'udyr', 'urgot', 'varus', 'vayne', 'veigar', 'vel koz', 'vex', 'VI', 'viego', 'viktor', 'vladmir', 'voliber', 'warwick', 'wukong', 'xayah', 'xerath', 'xin zhao', 'yasuo', 'yone','yorick', 'yuumi', 'zac', 'zed', 'zeri', 'ziggs', 'zilean', 'zoe', 'zyra']
         sorteio = random.choice(campeoes)
         return sorteio.upper()
 
-    def sorteio_vava(self):
+    def sorteio_vava(self): # Sorteia os personagens de VALORANT.
         agentes = ['Brimstone', 'Phoenix', 'Sage', 'Neon', 'Sova', 'Viper', 'Chypher', 'Reyna','Killjoy', 'Breach', 'Omen', 'Jett', 'Raze', 'Skye', 'Yoru', 'Astra', 'Kay/o', 'Chamber', 'Fade', 'Omen']
         sorteio = random.choice(agentes)
         return sorteio.upper()
 
-    def menu(self):
+    def menu(self): # Menu principal do código.
         menu_principal = int(input('BEM VINDO AO MENU PRINCIPAL!\n\nEscolha o tipo de sorteio.\n\n1.Sorteio de personagens\n2.Sorteio de posições/lanes\n4.SAIR DO PROGRAMA\n\n10. Suporte\n\n\nESCOLHA UMA OPÇÃO: '))
         if menu_principal == 1:
             os.system('cls' if os.name == 'nt' else 'clear')
@@ -40,7 +40,7 @@ class Sorteios:
             print("\nERRO:\nEscolha uma opção válida.\nVoltando ao menu de escolha...\n")
             return self.menu()
 
-    def menu_voltar(self):
+    def menu_voltar(self): # Opção para voltar diretamente ao menu principal.
         menu_voltar1 = int(input('\n\nEscolha uma opção.\n\n1. Menu principal\n\nESCOLHA UMA OPÇÃO: '))
         if menu_voltar1 == 1:
             os.system('cls' if os.name == 'nt' else 'clear')
@@ -53,7 +53,7 @@ class Sorteios:
             print("\nERRO:\nEscolha uma opção válida.\nVoltando ao menu de escolha...\n")
             return self.menu_voltar()
         
-    def menu_personagens(self):
+    def menu_personagens(self): # Menu de escplha do sorteio de personagens.
         escolha_personagens = int(input('BEM VINDO AO MENU DE SORTEIOS\n\nEscolha um sorteio.\n\nSorteio de personagens:\n1. VALORANT\n2. LEAGUE OF LEGENDS\n\nESCOLHA UMA OPÇÃO: '))
         if escolha_personagens == 1:
             os.system('cls' if os.name == 'nt' else 'clear')
@@ -70,7 +70,7 @@ class Sorteios:
             print("\nERRO:\nEscolha uma opção válida.\nVoltando ao menu de escolha...\n")
             return self.menu_personagens()
             
-    def menu_posicoes(self):
+    def menu_posicoes(self): # Menu de posições.
         print('Esse local ainda está em desenvolvimento.')
         time.sleep(3)
         print('Voltando ao Menu...')
@@ -78,7 +78,7 @@ class Sorteios:
         os.system('cls' if os.name == 'nt' else 'clear')
         return self.menu()
 
-    def escolha_depois_sorteio_vava(self):
+    def escolha_depois_sorteio_vava(self): # Retorna as opções de de voltar para um menu específico depois do sorteio do VAlORANT.
         depois_sorteio = int(input('\n\nEscolha uma opção.\n\n1. Menu principal\n2. Menu de personagens\n3. Sortear novamente\n4. SAIR DO PROGRAMA\n\nESCOLHA UMA OPÇÃO: '))
         if depois_sorteio == 1:
             os.system('cls' if os.name == 'nt' else 'clear')
@@ -95,7 +95,7 @@ class Sorteios:
             os.system('cls' if os.name == 'nt' else 'clear')
             return self._mensagem_suporte_pos_sorteio()
             
-    def escolha_depois_sorteio_lol(self):
+    def escolha_depois_sorteio_lol(self): # Retorna as opções de de voltar para um menu específico depois do sorteio do LOL.
         depois_sorteio = int(input('\n\nEscolha uma opção.\n\n1. Menu principal\n2. Menu de personagens\n3. Sortear novamente\n4. SAIR DO PROGRAMA\n\nESCOLHA UMA OPÇÃO: '))
         if depois_sorteio == 1:
             os.system('cls' if os.name == 'nt' else 'clear')
@@ -116,7 +116,7 @@ class Sorteios:
             print("\nERRO:\nEscolha uma opção válida.\nVoltando ao menu de escolha...\n")
             return self.escolha_depois_sorteio()
 
-    def _mensagem_suporte_pos_sorteio(self):
+    def _mensagem_suporte_pos_sorteio(self): # Mensagem de suporte quando o usuário escolher a opção SAIR nos códigos.
             print('Obrigado por usar o sorteador de personagens!\n\n\n\n\n\n\n\nDesenvolvido por Marcos Vinicius\ntwitter: @MaRcOsViNiCiUx')
             print('programa fechando em')
             print(3)
