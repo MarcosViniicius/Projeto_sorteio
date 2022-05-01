@@ -33,7 +33,7 @@ class Sorteios:
             return self.menu_voltar()
         elif menu_principal == 4:
             os.system('cls' if os.name == 'nt' else 'clear')
-            return self.mensagem_suporte_pos_sorteio()
+            return self._mensagem_suporte_pos_sorteio()
             
         else:
             os.system('cls' if os.name == 'nt' else 'clear')
@@ -93,7 +93,7 @@ class Sorteios:
             print(self.escolha_depois_sorteio_vava())
         elif depois_sorteio == 4:
             os.system('cls' if os.name == 'nt' else 'clear')
-            return self.mensagem_suporte_pos_sorteio()
+            return self._mensagem_suporte_pos_sorteio()
             
     def escolha_depois_sorteio_lol(self):
         depois_sorteio = int(input('\n\nEscolha uma opção.\n\n1. Menu principal\n2. Menu de personagens\n3. Sortear novamente\n4. SAIR DO PROGRAMA\n\nESCOLHA UMA OPÇÃO: '))
@@ -116,7 +116,7 @@ class Sorteios:
             print("\nERRO:\nEscolha uma opção válida.\nVoltando ao menu de escolha...\n")
             return self.escolha_depois_sorteio()
 
-    def mensagem_suporte_pos_sorteio(self):
+    def _mensagem_suporte_pos_sorteio(self):
             print('Obrigado por usar o sorteador de personagens!\n\n\n\n\n\n\n\nDesenvolvido por Marcos Vinicius\ntwitter: @MaRcOsViNiCiUx')
             print('programa fechando em')
             print(3)
